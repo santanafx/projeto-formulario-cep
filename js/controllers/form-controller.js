@@ -1,4 +1,8 @@
+import Address from "../models/address.js";
+
 function State() {
+  this.address = new Address();
+
   this.btnSave = null;
   this.btnClear = null;
 
@@ -25,5 +29,15 @@ export function init() {
   state.errorCep = document.querySelector('[data-error="cep"');
   state.errorNumber = document.querySelector('[data-error="number"');
 
-  console.log(state);
+  setFormError("cep", "Esta é a mensagem do CEP");
+  setFormError("number", "Mensagem de erro do number");
+}
+
+function handleInputNumberChange(event) {
+    if (event.target.value == )
+}
+
+function setFormError(key, value) {
+  const element = document.querySelector(`[data-error="${key}"]`);
+  element.innerHTML = value;
 }
