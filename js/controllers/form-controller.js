@@ -29,12 +29,18 @@ export function init() {
   state.errorCep = document.querySelector('[data-error="cep"');
   state.errorNumber = document.querySelector('[data-error="number"');
 
-  setFormError("cep", "Esta é a mensagem do CEP");
-  setFormError("number", "Mensagem de erro do number");
+  // setFormError("cep", "Esta é a mensagem do CEP");
+  // setFormError("number", "Mensagem de erro do number");
+
+  state.inputNumber.addEventListener("change", handleInputNumberChange);
 }
 
 function handleInputNumberChange(event) {
-    if (event.target.value == )
+  if (event.target.value == "") {
+    setFormError("number", "Campo requerido");
+  } else {
+    setFormError("number", "");
+  }
 }
 
 function setFormError(key, value) {
